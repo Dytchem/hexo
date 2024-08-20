@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>
+      
+        电路知识点速记 | Dycthem's Blog
+      
+    </title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png" />
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color="" />
+    
+    
+    
+      
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/STFANGSO.ttf);
+        font-weight: STFANGSO;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/times.ttf);
+        font-weight: times;
+    }
+  </style>
+
+
+    
+    <link rel="stylesheet"
+          type="text/css"
+          href='/css/layout.css' />
+    
+      <script>
+        var _hmt = _hmt || [];
+        (function () {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?4a7a361eba01f051b893d37baaafb27e";
+          var s = document.getElementsByTagName("script")[0];
+          s
+            .parentNode
+            .insertBefore(hm, s);
+        })();
+      </script>
+    
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
+  
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    
+      <div id="search-mask" style="display:none">
+  <div class="search-main" id="search-main">
+    <div class="search__head">
+      <div class="search-form">
+        <svg t="1706347533072"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="7828"
+             width="20"
+             height="20">
+          <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+          </path>
+        </svg>
+        <input id="search-input" placeholder="搜索文章">
+        <svg t="1706361500528"
+             id="search-clear"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="4351"
+             width="20"
+             height="20">
+          <path d="M512 562.688l-264.2944 264.2944-50.688-50.688L461.312 512 197.0176 247.7056l50.688-50.688L512 461.312l264.2944-264.2944 50.688 50.688L562.688 512l264.2944 264.2944-50.688 50.688L512 562.688z" fill="#00" p-id="4352">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div class="search__body" id="search-result"></div>
+    <div class="search__foot"></div>
+  </div>
+</div>
+
+    
+    <div class="head">
+      <div class="nav">
+        <a href='/' class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg" />
+        </a>
+        <input id="navBtn" type="checkbox" />
+        <div class="nav-right">
+          
+            <div class="search-outer">
+  <div class="search" id="search-btn">
+    <svg t="1706347533072"
+         class="icon"
+         viewBox="0 0 1024 1024"
+         version="1.1"
+         xmlns="http://www.w3.org/2000/svg"
+         p-id="7828"
+         width="20"
+         height="20">
+      <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+      </path>
+    </svg>
+    <span>搜索</span>
+    <span class="search-shortcut-key">Ctrl K</span>
+  </div>
+</div>
+
+          
+          <div class="nav-menu">
+            
+              
+                <a class="nav-menu-item" href="/maths">数学</a>
+              
+                <a class="nav-menu-item" href="/physics">物理</a>
+              
+                <a class="nav-menu-item" href="/cs">计科</a>
+              
+            
+            
+          </div>
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">电路知识点速记</div>
+        <div class="post-info">
+          
+  <a href="/tags/%E7%94%B5%E8%B7%AF/" class="post-tag">#电路</a>
+
+
+          <span class="post-date">2024-08-20</span>
+        </div>
+      </div>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <hr />
+<p>注意： 1. 本文相关教材：电路（慕课版 支持AR+H5交互）邹建龙 著
+人民邮电出版社 2. 本文为纯干货，建议配合课本复习，并辅以实战练习 3.
+本文无图，如有图片需求，请到课本对应章节查看 4.
+本文为了使某些内容更容易被理解和记忆，特地转换了表述 5.
+本文或许存在一些纰漏，读者应当仔细甄别、理性对待</p>
+<hr />
+<h4 id="第1章-电路概论">第1章 电路概论</h4>
+<p>已学内容全部为：线性电路、集总参数电路</p>
+<hr />
+<h3 id="第一篇-电路基本概念和分析基础">==第一篇
+电路基本概念和分析基础==</h3>
+<hr />
+<h4 id="第2章-电路基本概念">第2章 电路基本概念</h4>
+<p>标定电压、电流方向：参考方向 √ 真实方向 ×</p>
+<p>#关联参考方向 电流从电压正极流入 功率：<span
+class="math inline">\(p=ui\)</span> 关联参考方向下：<span
+class="math inline">\(p&gt;0\)</span>，实际吸收功率；<span
+class="math inline">\(p&lt;0\)</span>，实际发出功率。非关联反之。</p>
+<p>#电路基本元件 （以下全为关联参考方向） * 电阻：<span
+class="math inline">\(u=Ri\)</span>，<span
+class="math inline">\(p=ui=i^2 R=\frac{u^2}{R}\)</span> * 电容：<span
+class="math inline">\(i=C\frac{\mathrm{d}u}{\mathrm{d}t}\)</span> *
+电感：<span
+class="math inline">\(u=L\frac{\mathrm{d}i}{\mathrm{d}t}\)</span> *
+独立电压源、独立电流源、电压/电流控制电压/电流源</p>
+<p>#电路拓扑 支路<span class="math inline">\(b\)</span>，节点<span
+class="math inline">\(n\)</span>，网孔<span
+class="math inline">\(m=b-n+1\)</span> 串联、并联、其他</p>
+<hr />
+<h4 id="第3章-电路基本定理">第3章 电路基本定理</h4>
+<p>#基尔霍夫定律 * 电流定律（KCL）：节点电流代数和为<span
+class="math inline">\(0\)</span> → <span
+class="math inline">\(n-1\)</span>个独立方程 *
+电压定律（KVL）：回路电压代数和为<span class="math inline">\(0\)</span>
+→ <span class="math inline">\(m\)</span>个独立方程</p>
+<hr />
+<h4 id="第4章-电路基本分析方法">第4章 电路基本分析方法</h4>
+<p>#等效变换 对外等效、对内不等效 + 电阻等效 + 串联：<span
+class="math inline">\(R_\mathrm{eq}=\sum\limits_{i}{R_i}\)</span> +
+并联：<span
+class="math inline">\(\frac{1}{R_\mathrm{eq}}=\sum\limits_{i}{\frac{1}{R_i}}\)</span>
++ △形→Y形：<span class="math inline">\(R_{ij}=R_i R_j
+\sum\limits_{k}{\frac{1}{R_k}}\)</span> + Y形→△形：<span
+class="math inline">\(R_i=\frac{R_{ij}
+R_{ik}}{R_{ij}+R_{ik}+R_{jk}}\)</span> * 电源等效 + 电压源串联<span
+class="math inline">\(u_{\mathrm{s}}\)</span>相加，电流源并联<span
+class="math inline">\(i_{\mathrm{s}}\)</span>相加 * 电源、电阻混合等效 +
+等效模型：电压源<span
+class="math inline">\(u_\mathrm{s}\)</span>与电阻<span
+class="math inline">\(R_u\)</span>并联 ⇆ 电流源<span
+class="math inline">\(i_\mathrm{s}\)</span>与电阻<span
+class="math inline">\(R_i\)</span>串联 + <span
+class="math inline">\(R_u=R_i\)</span>，<span
+class="math inline">\(i_\mathrm{s}=\frac{u_\mathrm{s}}{R_u}\)</span>，<span
+class="math inline">\(u_\mathrm{s}=i_\mathrm{s} R_i\)</span></p>
+<p>#节点电压法 <span class="math inline">\(n-1\)</span>个方程：自导项 -
+互导项 = 电源产生电流项</p>
+<p>#回路电流法 <span class="math inline">\(m\)</span>个方程：自阻项 -
+互阻项 = 电源产生电压项</p>
+<p><em>以上内容建议实操练习，在实战中总结更多技巧</em></p>
+<hr />
+<h4 id="第5章-电路定理">第5章 电路定理</h4>
+<p>#线性定理 （用<span
+class="math inline">\(x\)</span>表示待求电压/电流，<span
+class="math inline">\(s_i\)</span>表示第<span
+class="math inline">\(i\)</span>个独立电压/电流源） * 叠加定理：<span
+class="math display">\[x=f(s_1,s_2,\ldots,s_n)\Rightarrow
+x=\sum\limits_{i}f(\delta_{i1}s_1,\delta_{i2}s_2,\ldots,\delta_{in}s_n)\]</span>
+* 齐性定理：（<span class="math inline">\(k\)</span>为常数）<span
+class="math display">\[x=f(k s_i)\Rightarrow x=kf(s_i)\]</span> *
+二者结合：<span class="math display">\[x=f(k_1 s_1,k_2 s_2,\ldots,k_n
+s_n)\Rightarrow x=\sum\limits_{i}k_i
+f(\delta_{i1}s_1,\delta_{i2}s_2,\ldots,\delta_{in}s_n)\]</span></p>
+<p>#替代定理 参量为<span
+class="math inline">\(u、i\)</span>的支路可被替换为电压源<span
+class="math inline">\(u_\mathrm{s}=u\)</span>，或电流源<span
+class="math inline">\(i_\mathrm{s}=i\)</span>，或电阻<span
+class="math inline">\(R=\frac{u}{i}\)</span></p>
+<p>#戴维南定理
+线性含源一端口网络可以用一个电压源和一个电阻串联来等效，该电压源的电压为一端口网络的端口开路电压<span
+class="math inline">\(u_{\mathrm{oc}}\)</span>，该电阻的阻值为一端口网络内独立电源置零后的端口等效电阻<span
+class="math inline">\(R_{\mathrm{eq}}\)</span> 一步法：给端口接一个<span
+class="math inline">\(u_\mathrm{s}、i_\mathrm{s}\)</span>（非关联）的电源，最后可求得：<span
+class="math inline">\(u_\mathrm{s}=u_{\mathrm{oc}}+R_{\mathrm{eq}}i_\mathrm{s}\)</span></p>
+<p>#诺顿定理 戴维南等效的“电流源版本”</p>
+<p>最大功率传输：当<span
+class="math inline">\(R=R_{\mathrm{eq}}\)</span>时，<span
+class="math inline">\(P_{\max}=\frac{u_{\mathrm{oc}}^2}{4R_{\mathrm{eq}}}\)</span></p>
+<p>#特勒根定理 * 定理一：关联参考方向下，<span
+class="math display">\[\sum\limits_{k=1}^{b}{u_k i_k}=0\]</span> *
+定理二：两对应电路<em>（规定见课本）</em>，<span
+class="math display">\[\sum\limits_{k=1}^{b}{u_k
+\hat{i}_k}=\sum\limits_{k=1}^{b}{\hat{u}_k i_k}=0\]</span> *
+定理二的推论：两对应电路，除线性电阻网络外，<span
+class="math display">\[\sum\limits_{k=1}^{r}{u_k
+\hat{i}_k}=\sum\limits_{k=1}^{r}{\hat{u}_k i_k}\]</span></p>
+<p>#互易定理 对二端口网络的两端分别施加激励，<span
+class="math display">\[\frac{激励1}{响应1}=\frac{激励2}{响应2}\]</span></p>
+<p>#对偶原理 <em>有兴趣请见课本</em></p>
+<hr />
+<h3 id="第二篇-动态电路的时域分析">==第二篇 动态电路的时域分析==</h3>
+<hr />
+<h4 id="第6章-动态电路的动态元件和微分方程">第6章
+动态电路的动态元件和微分方程</h4>
+<p>#电容 VCR：<span
+class="math inline">\(i=C\frac{\mathrm{d}u}{\mathrm{d}t}\)</span> 或
+<span
+class="math inline">\(u(t)=u(t_0)+\frac{1}{C}\int_{t_0}^{t}i(\xi)\mathrm{d}\xi\)</span>
+能量：<span class="math inline">\(w=\frac{1}{2}Cu^2\)</span>
+等效变换：（与电阻相反） * 串联：<span
+class="math inline">\(\frac{1}{C_\mathrm{eq}}=\sum\limits_{i}{\frac{1}{C_i}}\)</span>
+* 并联：<span
+class="math inline">\(C_\mathrm{eq}=\sum\limits_{i}{C_i}\)</span>
+平行板电容器：<span
+class="math inline">\(C=\varepsilon\frac{S}{d}\)</span></p>
+<p>#电感 VCR：<span
+class="math inline">\(u=C\frac{\mathrm{d}i}{\mathrm{d}t}\)</span> 或
+<span
+class="math inline">\(i(t)=i(t_0)+\frac{1}{L}\int_{t_0}^{t}u(\xi)\mathrm{d}\xi\)</span>
+能量：<span class="math inline">\(w=\frac{1}{2}Li^2\)</span>
+等效变换：（与电阻相反） * 串联：<span
+class="math inline">\(L_\mathrm{eq}=\sum\limits_{i}{L_i}\)</span> *
+并联：<span
+class="math inline">\(\frac{1}{L_\mathrm{eq}}=\sum\limits_{i}{\frac{1}{L_i}}\)</span></p>
+<p>#动态电路的定解问题 * 微分方程：KVL + KCL + VCR 方程组联立 →
+关于电流/电压的<span
+class="math inline">\(n\)</span>阶常系数线性微分方程 * 初始条件：<span
+class="math inline">\(u_C(0_+)=u_C(0_-)\)</span> 以及 <span
+class="math inline">\(i_L(0_+)=i_L(0_-)\)</span> + 以上方程组 →
+关于电流/电压的<span
+class="math inline">\(n\)</span>阶常系数线性微分方程的<span
+class="math inline">\(n\)</span>个初始条件 * 特殊情况：<span
+class="math inline">\(u_C(t)\)</span>或<span
+class="math inline">\(i_L(t)\)</span>在<span
+class="math inline">\(t=0\)</span>时刻发生突变，此时应对某个方程进行<span
+class="math inline">\(t=0_-\)</span>到<span
+class="math inline">\(t=0_+\)</span>的积分，才能求出<span
+class="math inline">\(u_C(0_+)\)</span> 或 <span
+class="math inline">\(i_L(0_+)\)</span>。<em>(详见课本<span
+class="math inline">\(P_{135}\)</span>的例子）</em></p>
+<hr />
+<h4 id="第7章-一阶动态电路">第7章 一阶动态电路</h4>
+<p><em>电容、电感的充、放电方程见课本</em></p>
+<p>#三要素公式 电容电压： <span
+class="math display">\[u_C(t)=u_C(\infty)+[u_C(0_+)-u_C(\infty)]\mathrm{e}^{-\frac{t}{\tau}}\]</span>
+其中： <span class="math display">\[\tau=CR_{\mathrm{eq}}\]</span>
+电感电流： <span
+class="math display">\[i_L(t)=i_L(\infty)+[i_L(0_+)-i_L(\infty)]\mathrm{e}^{-\frac{t}{\tau}}\]</span>
+其中： <span
+class="math display">\[\tau=\frac{L}{R_{\mathrm{eq}}}\]</span></p>
+<p>#一阶电路的响应 由叠加定理得， <span
+class="math display">\[全响应=零状态响应+零输入响应\]</span> 阶跃函数：
+<span class="math display">\[
+\varepsilon \left( t \right) =\begin{cases}
+    0,t&lt;0\\
+    1,t&gt;0\\
+\end{cases}
+\]</span> 冲激函数： <span
+class="math display">\[\delta(t)=\frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)\]</span>
+求解阶跃响应只需先求各组分阶跃函数的响应，再由叠加定理叠加便可得最终解。
+求解冲激响应只需先求解对应的阶跃响应，然后对阶跃响应求导便可得冲激响应。</p>
+<hr />
+<h4 id="第8章-二阶动态电路">第8章 二阶动态电路</h4>
+<p>定解问题为二阶微分方程</p>
+<p>求解二阶微分方程： 特征方程 → 特征根<span
+class="math inline">\(\lambda_1,\lambda_2\)</span> → 齐次通解： <span
+class="math display">\[\lambda_1=\lambda_2 \Rightarrow
+y=(A+Bt)\mathrm{e}^{\lambda t}\]</span> <span
+class="math display">\[\lambda_1\ne\lambda_2 \Rightarrow
+y=\mathrm{Re}(A\mathrm{e}^{\lambda_1 t}+B\mathrm{e}^{\lambda_2
+t})\]</span>
+<em>（这里是为了方便记忆，出现复指数则用欧拉公式展开成三角函数表示）</em></p>
+<p>（如果是非齐次方程：凑出非齐次特解 → 原方程通解为：齐次通解 +
+非齐次特解）</p>
+<p>最后：待定系数，由初始条件定解</p>
+<p>#RLC串联电路的工作状态 * 过阻尼：<span
+class="math inline">\(R&gt;2\sqrt{\frac{L}{C}}\)</span> → 单调衰减 *
+临界阻尼：<span class="math inline">\(R=2\sqrt{\frac{L}{C}}\)</span> →
+单调衰减，但衰减相比于过阻尼更快 * 欠阻尼：<span
+class="math inline">\(0&lt;R&lt;2\sqrt{\frac{L}{C}}\)</span> → 震荡衰减
+* 零阻尼：<span class="math inline">\(R=0\)</span> →
+等幅振荡，不衰减</p>
+<p><em>其他二阶电路，见课本</em></p>
+<hr />
+<h3 id="第三篇-正弦交流电路">==第三篇 正弦交流电路==</h3>
+<hr />
+<h4 id="第9章-正弦交流电路分析基础">第9章 正弦交流电路分析基础</h4>
+<p>正弦量： <span class="math display">\[f(t)=F_\mathrm{m}\cos(\omega
+t+\varphi)=\mathrm{Re}[F_\mathrm{m}\mathrm{e}^{\mathrm{j}(\omega
+t+\varphi)}]\]</span> 振幅相量：（以电流为例） <span
+class="math display">\[\dot{I}_\mathrm{m}=I_\mathrm{m}\mathrm{e}^{\mathrm{j}\varphi}\]</span>
+#有效值相量 <span
+class="math display">\[\dot{I}=I\mathrm{e}^{\mathrm{j}\varphi}=I\angle\varphi\]</span>
+其中： <span class="math display">\[I=\frac{1}{T}\sqrt{\int_0^T
+i^2(t)\mathrm{d}t}\]</span> 在正弦交流电路中，有： <span
+class="math display">\[I=\frac{I_\mathrm{m}}{\sqrt{2}}\]</span></p>
+<p>#相量域中的VCR <span class="math display">\[
+\begin{array}{c}
+    \dot{U}_R=R\dot{I}_R\\
+    \dot{U}_L=\mathrm{j}\omega L\dot{I}_L\\
+    \dot{I}_C=\mathrm{j}\omega C\dot{U}_C\\
+\end{array}
+\]</span></p>
+<p>#阻抗 <span
+class="math display">\[Z=\frac{\dot{U}}{\dot{I}}=R+\mathrm{j}X=|Z|\angle{\varphi_Z}=\frac{U}{I}\angle(\varphi_{u}-\varphi_{i})\]</span>
+对基本元件，有： <span class="math display">\[
+\begin{array}{c}
+    Z_R=R\\
+    Z_L=\mathrm{j}\omega L\\
+    Z_C=\frac{1}{\mathrm{j}\omega C}\\
+\end{array}
+\]</span></p>
+<p>#导纳 <span
+class="math display">\[Y=\frac{1}{Z}=\frac{\dot{I}}{\dot{U}}=G+\mathrm{j}B\]</span></p>
+<hr />
+<h4 id="第10章-正弦交流电路的相量分析法">第10章
+正弦交流电路的相量分析法</h4>
+<p>#代数方法 具体方法同第一篇内容，只是变量从实数域变到了复数域</p>
+<p>将时域正弦量转换为相量 → 用电路定理求解 → 将相量转换回正弦量</p>
+<p>#相量图
+实际上是电路方程通过复数的几何意义映射到复平面中的首尾相接矢量多边形</p>
+<p>列写方程 → 确定参考相量 → 依次绘制其他相量 →
+构成多边形，找几何关系，求解</p>
+<p>重要关系： * 电阻电压与电流同相位，即：<span
+class="math inline">\(\varphi_{u}-\varphi_{i}=0\degree\)</span> *
+电感电压超前电流<span
+class="math inline">\(90\degree\)</span>，即：<span
+class="math inline">\(\varphi_{u}-\varphi_{i}=90\degree\)</span> *
+电容电压滞后电流<span
+class="math inline">\(90\degree\)</span>，即：<span
+class="math inline">\(\varphi_{u}-\varphi_{i}=-90\degree\)</span></p>
+<p><em>以上内容建议实操练习，在实战中总结更多技巧</em></p>
+<hr />
+<h4 id="第11章-正弦交流电路的功率">第11章 正弦交流电路的功率</h4>
+<p>#瞬时功率 <span class="math display">\[p(t)=u(t)i(t)\]</span></p>
+<p>#复功率 <span
+class="math display">\[\bar{S}=P+\mathrm{j}Q=UI\mathrm{e}^{\mathrm{j}(\varphi_{u}-\varphi_{i})}=\dot{U}\dot{I}^*=I^2Z=\frac{U^2}{Z^*}\]</span>
+<em>（代入VCR即可推出电阻、电感、电容的复功率表达式，不建议死记）</em></p>
+<p>#有功功率<span
+class="math display">\[P=\mathrm{Re}(\bar{S})=UI\cos(\varphi_{u}-\varphi_{i})\]</span>
+#最大有功功率传输 可变负载幅角和模值：当 <span
+class="math inline">\(Z=Z_\mathrm{eq}^*\)</span> 时，<span
+class="math inline">\(P_\max=\frac{U_\mathrm{oc}^2}{4R_\mathrm{eq}}\)</span>
+仅可变负载模值：当 <span
+class="math inline">\(|Z|=|Z_\mathrm{eq}|\)</span> 时，<span
+class="math inline">\(P_\max=\ldots\)</span></p>
+<p>#无功功率<span
+class="math display">\[Q=\mathrm{Im}(\bar{S})=UI\sin(\varphi_{u}-\varphi_{i})\]</span></p>
+<p>#视在功率 <span class="math display">\[S=|S|=UI\]</span></p>
+<p>#功率因数 <span
+class="math display">\[\cos\varphi=\cos(\varphi_{u}-\varphi_{i})=\frac{P}{S}\]</span></p>
+<p>#功率守恒 <span class="math inline">\(\bar{S}\)</span>
+守恒（对所有电路元件的代数和为<span
+class="math inline">\(0\)</span>），即 <span
+class="math inline">\(P,Q\)</span> 守恒 <span
+class="math inline">\(S\)</span> 不一定守恒</p>
+<hr />
+<h3 id="第四篇-电路应用与拓展">==第四篇 电路应用与拓展==</h3>
+<hr />
+<h4 id="第12章-三相电路">第12章 三相电路</h4>
+<p>#三相 （正序，顺时针） <span
+class="math display">\[\dot{U}_\mathrm{A}=U\angle0\degree,\;\dot{U}_\mathrm{B}=U\angle-120\degree,\;\dot{U}_\mathrm{C}=U\angle120\degree\]</span>
+有： <span
+class="math display">\[\dot{U}_\mathrm{A}+\dot{U}_\mathrm{B}+\dot{U}_\mathrm{C}=0\]</span>
+相量图：略</p>
+<p>注意区分：<em>（详见书）</em> * 相电压、相电流、线电压、线电流 *
+电压源/负载的Y形/△形接法</p>
+<p>#对称三相电路 将△形变换为Y形 → 所有中性点<span
+class="math inline">\(\dot{U}_\mathrm{N&#39;}=0\)</span>，等效变换化简 →
+求解</p>
+<p>#不对称三相电路 回归到一般的相量法求解</p>
+<p>#功率表 读数：<span
+class="math inline">\(P=\mathrm{Re}(\dot{U}\dot{I}^*)\)</span>
+（注意：这里的 <span class="math inline">\(\dot{U}\)</span> 和 <span
+class="math inline">\(\dot{I}\)</span>
+不一定恰好是同一支路的，只有是同一支路<span
+class="math inline">\(P\)</span>才表示有功功率）</p>
+<p>二瓦计法： <span
+class="math display">\[P_1+P_2=\mathrm{Re}(\dot{U}_\mathrm{AB}\dot{I}_\mathrm{A}^*)+\mathrm{Re}(\dot{U}_\mathrm{CB}\dot{I}_\mathrm{C}^*)=P_\mathrm{A}+P_\mathrm{B}+P_\mathrm{C}\]</span>
+<em>详细的接法见课本</em></p>
+<hr />
+<h4 id="第13章-磁耦合电路">第13章 磁耦合电路</h4>
+<p>#同名端 同名端流入电流产生的磁场相互增强</p>
+<p>#互感电压 电流、电压为关联参考方向，电流从同名端流入时： 时域： <span
+class="math display">\[
+\begin{cases}
+    u_1=L_1\frac{\mathrm{d}i_1}{\mathrm{d}t}+M\frac{\mathrm{d}i_2}{\mathrm{d}t}\\
+    u_2=L_2\frac{\mathrm{d}i_2}{\mathrm{d}t}+M\frac{\mathrm{d}i_1}{\mathrm{d}t}\\
+\end{cases}
+\]</span> 相量域： <span class="math display">\[
+\begin{cases}
+    \dot{U}_1=\mathrm{j}\omega L_1\dot{I}_1+\mathrm{j}\omega
+M\dot{I}_2\\
+    \dot{U}_2=\mathrm{j}\omega L_2\dot{I}_2+\mathrm{j}\omega
+M\dot{I}_1\\
+\end{cases}
+\]</span></p>
+<p>其他情况，应 #判断互感电压的极性 ：
+自己线圈流入电流的端子对应对方线圈的同名端上的互感电压极性为<span
+class="math inline">\(+\)</span>。</p>
+<p>#去耦等效 互感系数可以叠加到两个电感上（耦合同方向串联为<span
+class="math inline">\(+\)</span>，反之为<span
+class="math inline">\(-\)</span>），并在中间支路上叠加一个与前面的叠加项相反的电感。<em>（详见课本）</em></p>
+<p>#变压器 耦合系数： <span
+class="math display">\[k=\frac{M}{\sqrt{L_1L_2}}\]</span> 全耦合：<span
+class="math inline">\(k=1\)</span></p>
+<p>#阻抗变换 输入阻抗： <span
+class="math display">\[Z_\mathrm{in}=\mathrm{j}\omega L_1+\frac{(\omega
+M)^2}{Z_2+\mathrm{j}\omega L_2}\]</span> 输出阻抗： <span
+class="math display">\[Z_\mathrm{out}=\mathrm{j}\omega L_2+\frac{(\omega
+M)^2}{Z_1+\mathrm{j}\omega L_1}\]</span>
+<em>（死记不到，建议现推）</em></p>
+<p>去耦等效：连接变压器下方的两个端子，即可用上述方法进行去耦等效</p>
+<p>#理想变压器 定义：无损耗、全耦合、<span
+class="math inline">\(L_1,L_2,M\rightarrow \infty\)</span>
+性质：（电流、电压为关联参考方向，电流从同名端流入时；如果不是，请添<span
+class="math inline">\(-\)</span>号来转换） * <span
+class="math inline">\(\frac{u_1}{u_2}=\frac{\dot{U}_1}{\dot{U}_2}=\frac{N_1}{N_2}=n\)</span>
+* <span
+class="math inline">\(\frac{i_1}{i_2}=\frac{\dot{I}_1}{\dot{I}_2}=-\frac{N_2}{N_1}=-\frac{1}{n}\)</span>
+* 输入功率等于输出功率 * 阻抗变换：<span
+class="math inline">\(Z_\mathrm{in}=\frac{N_1^2}{N_2^2}Z_2=n^2Z_2\)</span></p>
+<hr />
+<h4 id="第14章-滤波器和谐振电路">第14章 滤波器和谐振电路</h4>
+<p>#传递函数 <span
+class="math display">\[H(\mathrm{j}\omega)=\frac{输入信号相量}{输出信号相量}\]</span></p>
+<p>#滤波器 分类：低通、高通、带通 截止角频率<span
+class="math inline">\(\omega_\mathrm{c}\)</span>：<span
+class="math inline">\(|H(\mathrm{j}\omega_\mathrm{c})|=\frac{1}{\sqrt{2}}\)</span>
+幅频特性曲线：<span
+class="math inline">\(|H(\mathrm{j}\omega)|-\omega\)</span> 图像</p>
+<p>#谐振 定义：<span
+class="math inline">\(\mathrm{Im}(Z_\mathrm{eq})=0\)</span> 分类： *
+串联谐振 * <span class="math inline">\(Z=R+\mathrm{j}(\omega
+L-\frac{1}{\omega C})=R\)</span> * <span
+class="math inline">\(\omega=\frac{1}{\sqrt{LC}}\)</span> *
+LC整体相当于短路 * 并联谐振 * <span
+class="math inline">\(Y=\frac{1}{R}+\mathrm{j}(\omega C-\frac{1}{\omega
+L})=\frac{1}{R}\)</span> * <span
+class="math inline">\(\omega=\frac{1}{\sqrt{LC}}\)</span> *
+LC整体相当于开路</p>
+<p>#品质因数 <span
+class="math display">\[Q=2\pi\frac{最大耗能}{一个周期储能}=\frac{U_L}{U_\mathrm{s}}或\frac{U_C}{U_\mathrm{s}}\]</span>
+<span class="math inline">\(Q\)</span>
+越大，带宽越窄，幅频特性曲线越陡，频率选择性越高</p>
+<p>串联谐振： <span class="math display">\[Q=\frac{\omega
+L}{R}=\frac{1}{R\omega C}\]</span> 并联谐振： <span
+class="math display">\[Q=\frac{R}{\omega L}=R\omega C\]</span></p>
+<hr />
+<h4 id="第15章-非正弦周期电路">第15章 非正弦周期电路</h4>
+<p><em>傅里叶级数，详见课本</em></p>
+<p>求解：先求各分量的响应，在运用叠加原理即可</p>
+<p>#非正弦周期电路的有效值 <span class="math display">\[
+\begin{array}{c}
+    U=\sqrt{U_{0}^{2}+\sum\limits_{n=1}^r{U_{n}^{2}}}\\
+    I=\sqrt{I_{0}^{2}+\sum\limits_{n=1}^r{I_{n}^{2}}}\\
+\end{array}
+\]</span></p>
+<p>#非正弦周期电路的平均功率 <span
+class="math display">\[P=P_{0}+\sum\limits_{n=1}^rP_{n}=I^2R=\frac{U^2}{R}\]</span></p>
+<hr />
+<h4 id="第16章-二端口网络">第16章 二端口网络</h4>
+<p>二端口网络的定义：<span
+class="math inline">\(i_1=i&#39;_1,\;i_2=i&#39;_2\)</span></p>
+<p>#阻抗参数 <span class="math display">\[
+\left[ \begin{array}{c}
+    \dot{U}_1\\
+    \dot{U}_2\\
+\end{array} \right] =\boldsymbol{Z}\left[ \begin{array}{c}
+    \dot{I}_1\\
+    \dot{I}_2\\
+\end{array} \right]
+\]</span> #导纳参数 <span class="math display">\[
+\left[ \begin{array}{c}
+    \dot{I}_1\\
+    \dot{I}_2\\
+\end{array} \right] =\boldsymbol{Y}\left[ \begin{array}{c}
+    \dot{U}_1\\
+    \dot{U}_2\\
+\end{array} \right]
+\]</span> #混合参数 <span class="math display">\[
+\left[ \begin{array}{c}
+    \dot{U}_1\\
+    \dot{I}_2\\
+\end{array} \right] =\boldsymbol{H}\left[ \begin{array}{c}
+    \dot{I}_1\\
+    \dot{U}_2\\
+\end{array} \right]
+\]</span> #传输参数 <span class="math display">\[
+\left[ \begin{array}{c}
+    \dot{U}_1\\
+    \dot{I}_1\\
+\end{array} \right] =\boldsymbol{T}\left[ \begin{array}{c}
+    \dot{U}_2\\
+    -\dot{I}_2\\
+\end{array} \right]
+\]</span></p>
+<p>性质： <span class="math display">\[
+\begin{array}{c}
+    Z_{12}=Z_{21}\\
+    Y_{12}=Y_{21}\\
+    H_{12}=-H_{21}\\
+    T_{11}T_{12}-T_{21}T_{12}=1\\
+\end{array}
+\]</span></p>
+<p>等效电路：T形、Π形</p>
+<p>连接方式：级联（<span
+class="math inline">\(\boldsymbol{T}=\boldsymbol{T}_1\boldsymbol{T}_2\)</span>）、串联、并联</p>
+<hr />
+<h4 id="第17章-含有运算放大器的电路">第17章 含有运算放大器的电路</h4>
+<p>#特性 对输入端： * 虚断：<span
+class="math inline">\(i_+=i_-\approx0\)</span> * 虚短：<span
+class="math inline">\(u_+\approx u_-\)</span></p>
+<p>#含运放电路的求解 1. 完整标记虚短、虚断 2. 输入端列写KCL 3. 求解</p>
+<p>这部分简单而易错，容易会列出错误的关系式，应当时刻小心。</p>
+<p>要注意以下两点： * 运放是含源元件，不要在连接运放的回路上乱列KVL *
+运放输出端电流不满足虚断，不要在输出端乱列KCL</p>
+<p><em>具体的电路实例详见课本</em></p>
+<hr />
+<p>作者：黄得清 笔记软件：Obsidian 时间：2024/1/11
+字数：![[电路文件信息.png]]</p>
+
+      </div>
+    </div>
+    
+      <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({"startOnload":true});
+        }
+      </script>
+    
+  </article>
+  <div class="post__foot">
+    
+    <div class="post-nav">
+  
+    <div class="post-nav-item-left"></div>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/2024/08/20/test001/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+      </div>
+      圆周率的一种无穷级数
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              <div class="matts">问</div><div class="matts">渠</div><div class="matts">那</div><div class="matts">得</div><div class="matts">清</div><div class="matts">如</div><div class="matts">许</div>
+            </div>
+          
+            <div class="foot-line">
+              <div class="matts">为</div><div class="matts">有</div><div class="matts">源</div><div class="matts">头</div><div class="matts">活</div><div class="matts">水</div><div class="matts">来</div>
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-github.svg" />
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/Dytchem">Dytchem</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link" height="20px" width="20px" src="/images/icon/icon-email.svg" />
+                <a class="foot-link" href="mailto:Dytchem@qq.com">Dytchem@qq.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://example.com">Dycthem's Blog</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+      <script src="https://unpkg.com/js-polyfills@0.1.43/es6.js"></script>
+      <script id="MathJax-script"
+              async
+              src="https://www.unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+    
+    
+      <script src="/js/search.js"></script>
+      <script>searchInitialize("/search.json")</script>
+    
+    
+  
+
+  </body>
+</html>
