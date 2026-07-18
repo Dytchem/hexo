@@ -70,6 +70,15 @@
         })();
       </script>
     
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Dycthem's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hexo.dytchem.cn">
+    <meta property="og:image" content="/images/logo.svg">
+    <meta property="og:description" content="Dycthem的个人博客 - 数学·物理·计算机科学">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Dytchem">
     
   <link rel="stylesheet" type="text/css" href="/css/category.css" />
 
@@ -147,6 +156,10 @@
                 <a class="nav-menu-item" href="/cs">计科</a>
               
                 <a class="nav-menu-item" href="/rests">其他</a>
+              
+                <a class="nav-menu-item" href="/archives">归档</a>
+              
+                <a class="nav-menu-item" href="/tags">标签</a>
               
             
             
@@ -247,6 +260,14 @@
         <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/Dytchem">Dytchem</a>
       </div>
     
+      <div class="text">
+        <img alt="link"
+             height="20px"
+             width="20px"
+             src="/images/icon/icon-email.svg" />
+        <a class="foot-link" href="mailto:admin@dytchem.cn">admin@dytchem.cn</a>
+      </div>
+    
   </div>
 
 
@@ -291,6 +312,28 @@
         searchInitialize("/search.json")
       </script>
     
+    <!-- Back to top button -->
+    <style>
+      #back-to-top {
+        position: fixed; bottom: 30px; right: 30px;
+        width: 44px; height: 44px;
+        background: rgba(0,0,0,0.6); color: #fff;
+        border: none; border-radius: 50%; cursor: pointer;
+        font-size: 20px; display: none; z-index: 999;
+        transition: opacity 0.3s, transform 0.3s;
+        opacity: 0; transform: translateY(20px);
+      }
+      #back-to-top:hover { background: rgba(0,0,0,0.8); }
+      #back-to-top.show { opacity: 1; transform: translateY(0); }
+    </style>
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+    <script>
+      window.addEventListener('scroll', function(){
+        var btn = document.getElementById('back-to-top');
+        if(window.scrollY > 300) { btn.classList.add('show'); btn.style.display = 'block'; }
+        else { btn.classList.remove('show'); setTimeout(function(){ if(!btn.classList.contains('show')) btn.style.display = 'none'; }, 300); }
+      });
+    </script>
     <script src="/js/copy-code.js"></script>
     
   
