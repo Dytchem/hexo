@@ -183,7 +183,7 @@
           <span class="post-date">2024-08-26</span>
           
             <span class="post-wordcount" style="margin-left:12px;opacity:0.7">
-              95 字 · 1 分钟
+              1.8k 字 · 8 分钟
             </span>
           
         </div>
@@ -195,22 +195,311 @@
             
           </div>
         
-        <h3 id="定理原型">定理原型</h3>
-<p>函数 <span class="math display">$$f(t)=\sum_{i=1}^nk_ix_i^t$$</span>
-其中 <span
-class="math display"><em>k</em><sub><em>i</em></sub>, <em>x</em><sub><em>i</em></sub> ∈ ℝ<sup>+</sup>, <em>x</em><sub><em>i</em></sub> ≠ 1(∀<em>i</em>=1,2,...,<em>n</em>)</span>
-给定 <span
-class="math display"><em>a</em> &lt; <em>b</em> &lt; <em>c</em> &lt; <em>d</em></span>
-如果 <span
-class="math display"><em>f</em>(<em>a</em>) ≤ <em>f</em>(<em>c</em>)</span>
-则有 <span
-class="math display"><em>f</em>(<em>a</em>) ≤ <em>f</em>(<em>c</em>) ≤ <em>f</em>(<em>d</em>), <em>f</em>(<em>b</em>) ≤ <em>f</em>(<em>c</em>)</span>
-如果 <span
-class="math display"><em>f</em>(<em>b</em>) ≥ <em>f</em>(<em>d</em>)</span>
-则有 <span
-class="math display"><em>f</em>(<em>a</em>) ≤ <em>f</em>(<em>b</em>) ≤ <em>f</em>(<em>d</em>), <em>f</em>(<em>b</em>) ≥ <em>f</em>(<em>c</em>)</span></p>
-<p>实际上用到的是函数的单调性，<span
-class="math inline"><em>f</em>(<em>t</em>)</span>要么单调递增，要么先减后增。</p>
+        <h2 id="定理与证明">定理与证明</h2>
+<p><strong>定理（幂序不等式）.</strong> 设 <span
+class="math inline">\(k_i&gt;0,\;x_i&gt;0\)</span> 且 <span
+class="math inline">\(x_i\neq1\;(i=1,\dots,n)\)</span>，定义函数</p>
+<p><span class="math display">\[
+f(t)=\sum_{i=1}^n k_i x_i^t
+\]</span></p>
+<p>则 <span class="math inline">\(f(t)\)</span> 在 <span
+class="math inline">\(\mathbb R\)</span> 上是严格凸函数。因此 <span
+class="math inline">\(f\)</span>
+要么单调，要么先减后增——恰有一个极小值点。</p>
+<p>具体而言，任取 <span
+class="math inline">\(a&lt;b&lt;c&lt;d\)</span>，有：</p>
+<ol type="1">
+<li>若 <span class="math inline">\(f(a)\le f(c)\)</span>，则 <span
+class="math inline">\(f(b)\le f(c)\le f(d)\)</span>；</li>
+<li>若 <span class="math inline">\(f(b)\ge f(d)\)</span>，则 <span
+class="math inline">\(f(a)\ge f(b)\ge f(c)\)</span>。</li>
+</ol>
+<p><strong>证明.</strong> 记 <span class="math inline">\(\alpha_i=\ln
+x_i\)</span>，则 <span class="math inline">\(x_i^t=e^{\alpha_i
+t}\)</span>。计算一、二阶导数：</p>
+<p><span class="math display">\[
+f&#39;(t)=\sum k_i\alpha_i e^{\alpha_i t},\qquad
+f&#39;&#39;(t)=\sum k_i\alpha_i^2 e^{\alpha_i t}
+\]</span></p>
+<p>因 <span class="math inline">\(k_i&gt;0\)</span>、<span
+class="math inline">\(e^{\alpha_i t}&gt;0\)</span> 且至少有一个 <span
+class="math inline">\(x_i\neq1\)</span>（即 <span
+class="math inline">\(\alpha_i\neq0\)</span>），故 <span
+class="math inline">\(f&#39;&#39;(t)&gt;0\)</span> 恒成立，<span
+class="math inline">\(f\)</span>
+严格凸。以上两条结论均为凸性的直接推论。<span
+class="math inline">\(\square\)</span></p>
+<blockquote>
+<p><strong>注.</strong> 若所有 <span
+class="math inline">\(x_i&gt;1\)</span>，则 <span
+class="math inline">\(f\)</span> 严格递增；若所有 <span
+class="math inline">\(x_i&lt;1\)</span>，则 <span
+class="math inline">\(f\)</span> 严格递减；若兼而有之，则 <span
+class="math inline">\(f\)</span> 先减后增。</p>
+</blockquote>
+<hr />
+<h2 id="不等式证明">不等式证明</h2>
+<h3 id="划分思想">划分思想</h3>
+<p>以幂平均不等式的证明为例，说明如何利用幂序不等式。</p>
+<p>幂序不等式断言：形如 <span class="math inline">\(f(t)=\sum k_i
+x_i^t\)</span> 的函数是严格凸的。若再满足 <span
+class="math inline">\(f(0)=f(s)\)</span>，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(0\)</span> 与 <span
+class="math inline">\(s\)</span> 处取值相等，由凸性可知——对于 <span
+class="math inline">\(0&lt;r&lt;s\)</span> 有 <span
+class="math inline">\(f(r)\le f(0)=f(s)\)</span>；对于 <span
+class="math inline">\(r&lt;0\)</span> 有 <span
+class="math inline">\(f(r)\ge f(0)=f(s)\)</span>。</p>
+<p>若要证明 <span class="math inline">\(M_r\le M_s\)</span>，可尝试构造
+<span class="math inline">\(f(t)=\sum k_i x_i^t\)</span> 使其满足 <span
+class="math inline">\(f(0)=f(s)\)</span>，然后将 <span
+class="math inline">\(f(r)\)</span> 与 <span
+class="math inline">\(M_r\)</span>、<span
+class="math inline">\(M_s\)</span> 相关联。一旦建立这种关联，凸性给出的
+<span class="math inline">\(f(r)\)</span> 与端点值的大小关系便可转化为
+<span class="math inline">\(M_r\)</span> 与 <span
+class="math inline">\(M_s\)</span> 的大小关系。</p>
+<p>因此核心问题在于：<strong>如何选择 <span
+class="math inline">\(k_i\)</span> 和 <span
+class="math inline">\(x_i\)</span>，使 <span
+class="math inline">\(f(0)=f(s)\)</span> 成立，同时 <span
+class="math inline">\(f(r)\)</span> 能表达 <span
+class="math inline">\(M_r\)</span>？</strong>
+下面通过三个尝试来探索。</p>
+<p><strong>尝试一.</strong> 取 <span
+class="math inline">\(k_i=1/n\)</span>、<span
+class="math inline">\(x_i=a_i\)</span>，则 <span
+class="math inline">\(f(t)=\frac1n\sum a_i^t\)</span>。此时 <span
+class="math inline">\(f(0)=1\)</span>，而 <span
+class="math inline">\(f(s)=M_s^s\neq1\)</span>（除非 <span
+class="math inline">\(M_s=1\)</span>），不满足条件。</p>
+<p><strong>尝试二.</strong> 保留 <span
+class="math inline">\(x_i=a_i\)</span>，调整 <span
+class="math inline">\(k_i\)</span>。条件 <span
+class="math inline">\(f(0)=f(s)\)</span> 给出 <span
+class="math inline">\(\sum k_i=\sum k_i a_i^s\)</span>，即 <span
+class="math inline">\(\sum k_i(1-a_i^s)=0\)</span>。这需针对 <span
+class="math inline">\(a_i\)</span> 解出 <span
+class="math inline">\(k_i\)</span>，运算繁琐。</p>
+<p><strong>尝试三.</strong> 取 <span
+class="math inline">\(k_i=1/n\)</span>，调整 <span
+class="math inline">\(x_i\)</span>。设 <span
+class="math inline">\(x_i=a_i/M\)</span>，则 <span
+class="math inline">\(f(t)=\frac1n\sum (a_i/M)^t\)</span>。此时</p>
+<p><span class="math display">\[
+f(0)=\frac1n\sum 1=1,\qquad
+f(s)=\frac1n\sum\left(\frac{a_i}{M}\right)^{\!s}
+\]</span></p>
+<p>条件 <span class="math inline">\(f(0)=f(s)\)</span> 给出 <span
+class="math inline">\(\frac1n\sum(a_i/M)^s=1\)</span>，即 <span
+class="math inline">\(M^s=\frac1n\sum a_i^s\)</span>。记 <span
+class="math inline">\(C=\frac1n\sum a_i^s\)</span>，则 <span
+class="math inline">\(M=C^{1/s}\)</span>——正是 <span
+class="math inline">\(M_s\)</span>。</p>
+<p>至此得到正确的构造：<span
+class="math inline">\(f(t)=\frac1n\sum(a_i/M_s)^t\)</span>。注意 <span
+class="math inline">\(M_s\)</span>
+是推导的结果，而非前提。下面直接用此形式证明。</p>
+<hr />
+<h3 id="一幂平均不等式">一、幂平均不等式</h3>
+<p><strong>幂平均不等式（Power Mean Inequality）.</strong> 对正实数
+<span class="math inline">\(a_1,\dots,a_n\)</span> 及实数 <span
+class="math inline">\(r&lt;s\)</span>，有</p>
+<p><span class="math display">\[
+M_r\le M_s,\qquad
+M_t=\left(\frac1n\sum_{i=1}^n a_i^{\,t}\right)^{\!1/t}\;(t\neq0),
+\quad M_0=\Bigl(\prod_{i=1}^n a_i\Bigr)^{\!1/n}
+\]</span></p>
+<p>即幂平均函数 <span class="math inline">\(t\mapsto M_t\)</span> 关于
+<span class="math inline">\(t\)</span> 单调递增。</p>
+<p><strong>证明.</strong> 不妨设 <span
+class="math inline">\(s&gt;0\)</span>（<span
+class="math inline">\(s&lt;0\)</span> 的情形同理）。以 <span
+class="math inline">\(M_s\)</span> 为基准，引入规范化辅助函数</p>
+<p><span class="math display">\[
+f(t)=\frac1n\sum_{i=1}^n\left(\frac{a_i}{M_s}\right)^{\!t}
+\]</span></p>
+<p>直接验证 <span class="math inline">\(f(0)=f(s)=1\)</span>。<span
+class="math inline">\(f\)</span> 具有幂序不等式的标准形式（<span
+class="math inline">\(k_i=1/n\)</span>，<span
+class="math inline">\(x_i=a_i/M_s\)</span>），故 <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\(\mathbb
+R\)</span> 上严格凸。</p>
+<p>将 <span class="math inline">\(M_r\)</span> 用 <span
+class="math inline">\(f(r)\)</span> 表示：</p>
+<p><span class="math display">\[
+M_r=\left(\frac1n\sum a_i^r\right)^{\!1/r}
+=M_s\cdot\left(\frac1n\sum\left(\frac{a_i}{M_s}\right)^{\!r}\right)^{\!1/r}
+=M_s\cdot f(r)^{1/r}
+\]</span></p>
+<p>于是 <span class="math inline">\(M_r\le M_s\)</span> 等价于 <span
+class="math inline">\(f(r)^{1/r}\le1\)</span>。由 <span
+class="math inline">\(f\)</span> 的严格凸性及 <span
+class="math inline">\(f(0)=f(s)\)</span> 可得：</p>
+<ul>
+<li>若 <span class="math inline">\(0&lt;r&lt;s\)</span>，则 <span
+class="math inline">\(f(r)\le1\)</span>，又 <span
+class="math inline">\(1/r&gt;0\)</span>，故 <span
+class="math inline">\(f(r)^{1/r}\le1\)</span>；</li>
+<li>若 <span class="math inline">\(r&lt;0\)</span>，则 <span
+class="math inline">\(f(r)\ge1\)</span>，但 <span
+class="math inline">\(1/r&lt;0\)</span>，故 <span
+class="math inline">\(f(r)^{1/r}\le1\)</span>。</li>
+</ul>
+<p>两种情形均有 <span class="math inline">\(f(r)^{1/r}\le1\)</span>，即
+<span class="math inline">\(M_r\le M_s\)</span>。等号成立当且仅当诸
+<span class="math inline">\(a_i\)</span> 全相等。<span
+class="math inline">\(\square\)</span></p>
+<hr />
+<h3 id="二加权幂平均不等式">二、加权幂平均不等式</h3>
+<p><strong>加权幂平均不等式（Weighted Power Mean Inequality）.</strong>
+设 <span class="math inline">\(w_1,\dots,w_n&gt;0\)</span> 且 <span
+class="math inline">\(\sum w_i=1\)</span>，则对 <span
+class="math inline">\(r&lt;s\)</span> 有</p>
+<p><span class="math display">\[
+M_r\le M_s,\qquad M_t=\Bigl(\sum w_i a_i^{\,t}\Bigr)^{\!1/t}
+\]</span></p>
+<p><strong>证明.</strong> 以 <span class="math inline">\(M_s\)</span>
+为基准，引入规范化辅助函数</p>
+<p><span class="math display">\[
+f(t)=\sum w_i\left(\frac{a_i}{M_s}\right)^{\!t}
+\]</span></p>
+<p>则 <span class="math inline">\(f(0)=\sum w_i=1\)</span>，<span
+class="math inline">\(f(s)=\displaystyle\sum
+w_i\frac{a_i^s}{M_s^s}=1\)</span>。<span
+class="math inline">\(f\)</span> 具有幂序不等式的标准形式（<span
+class="math inline">\(k_i=w_i\)</span>，<span
+class="math inline">\(x_i=a_i/M_s\)</span>），故严格凸。</p>
+<p>将 <span class="math inline">\(M_r\)</span> 用 <span
+class="math inline">\(f(r)\)</span> 表示：</p>
+<p><span class="math display">\[
+M_r=\Bigl(\sum w_i a_i^r\Bigr)^{\!1/r}=M_s\cdot\Bigl(\sum
+w_i\Bigl(\frac{a_i}{M_s}\Bigr)^{\!r}\Bigr)^{\!1/r}=M_s\cdot f(r)^{1/r}
+\]</span></p>
+<p>由 <span class="math inline">\(f(0)=f(s)\)</span> 及 <span
+class="math inline">\(f\)</span> 的严格凸性：</p>
+<ul>
+<li>若 <span class="math inline">\(0&lt;r&lt;s\)</span>，则 <span
+class="math inline">\(f(r)\le1\)</span>，又 <span
+class="math inline">\(1/r&gt;0\)</span>，故 <span
+class="math inline">\(f(r)^{1/r}\le1\)</span>；</li>
+<li>若 <span class="math inline">\(r&lt;0\)</span>，则 <span
+class="math inline">\(f(r)\ge1\)</span>，但 <span
+class="math inline">\(1/r&lt;0\)</span>，故 <span
+class="math inline">\(f(r)^{1/r}\le1\)</span>。</li>
+</ul>
+<p>因此总有 <span class="math inline">\(M_r\le
+M_s\)</span>。等号成立当且仅当诸 <span
+class="math inline">\(a_i\)</span> 全相等。<span
+class="math inline">\(\square\)</span></p>
+<blockquote>
+<p><strong>注.</strong> 当 <span class="math inline">\(w_i=1/n\)</span>
+时退化为经典的幂平均不等式。</p>
+</blockquote>
+<hr />
+<h3 id="三赫尔德不等式">三、赫尔德不等式</h3>
+<p><strong>赫尔德不等式（Hölder Inequality）.</strong> 设 <span
+class="math inline">\(p,q&gt;1\)</span>，<span
+class="math inline">\(\dfrac1p+\dfrac1q=1\)</span>，则</p>
+<p><span class="math display">\[
+\sum_{i=1}^n |x_i y_i|\le\Bigl(\sum_{i=1}^n
+|x_i|^p\Bigr)^{\!1/p}\Bigl(\sum_{i=1}^n |y_i|^q\Bigr)^{\!1/q}
+\]</span></p>
+<p><strong>证明.</strong> 令 <span
+class="math inline">\(A=\sum|x_i|^p\)</span>、<span
+class="math inline">\(B=\sum|y_i|^q\)</span>，构造辅助函数</p>
+<p><span class="math display">\[
+f(t)=\sum_{i=1}^n\left(\frac{|x_i|^p}{A}\right)^{\!t}\left(\frac{|y_i|^q}{B}\right)^{\!1-t}
+\]</span></p>
+<p>易得</p>
+<p><span class="math display">\[
+f(0)=\sum\frac{|y_i|^q}{B}=1,\qquad f(1)=\sum\frac{|x_i|^p}{A}=1
+\]</span></p>
+<p>将 <span class="math inline">\(f(t)\)</span>
+改写为幂序不等式的标准形式：</p>
+<p><span class="math display">\[
+f(t)=\sum_{i=1}^n\frac{|y_i|^q}{B}\cdot\left(\frac{|x_i|^pB}{|y_i|^qA}\right)^{\!t}
+\]</span></p>
+<p>即 <span class="math inline">\(k_i=|y_i|^q/B\)</span>、<span
+class="math inline">\(x_i=|x_i|^pB/|y_i|^qA\)</span>。由幂序不等式知
+<span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbb R\)</span> 上严格凸。</p>
+<p>对满足 <span class="math inline">\(f(0)=f(1)=1\)</span>
+的严格凸函数，在区间 <span class="math inline">\([0,1]\)</span> 上恒有
+<span class="math inline">\(f(t)\le1\)</span>。特别地，取 <span
+class="math inline">\(t=1/p\)</span> 得</p>
+<p><span class="math display">\[
+f\!\left(\frac1p\right)=\sum\left(\frac{|x_i|^p}{A}\right)^{\!1/p}\left(\frac{|y_i|^q}{B}\right)^{\!1/q}\le1
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\sum|x_i y_i|\le A^{1/p}B^{1/q}
+=\Bigl(\sum|x_i|^p\Bigr)^{\!1/p}\Bigl(\sum|y_i|^q\Bigr)^{\!1/q}
+\]</span></p>
+<p><span class="math inline">\(\square\)</span></p>
+<hr />
+<h2 id="总结">总结</h2>
+<p>幂序不等式的核心洞察是：<strong>形如 <span class="math inline">\(\sum
+k_i x_i^t\)</span>
+的函数具有严格凸性，因此其单调行为至多只有一个极小值点。</strong>
+利用此性质，构造满足 <span class="math inline">\(f(0)=f(s)\)</span>
+的辅助函数，即可统一证明如下经典不等式。</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 38%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>不等式</th>
+<th>辅助函数 <span class="math inline">\(f(t)\)</span></th>
+<th>条件 <span class="math inline">\(f(0)=f(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>幂平均不等式</td>
+<td><span
+class="math inline">\(\displaystyle\frac1n\sum\bigl(\frac{a_i}{M_s}\bigr)^t\)</span></td>
+<td><span class="math inline">\(f(0)=f(s)=1\)</span></td>
+</tr>
+<tr class="even">
+<td>加权幂平均不等式</td>
+<td><span class="math inline">\(\displaystyle\sum
+w_i\bigl(\frac{a_i}{M_s}\bigr)^t\)</span></td>
+<td><span class="math inline">\(f(0)=f(s)=1\)</span></td>
+</tr>
+<tr class="odd">
+<td>赫尔德不等式</td>
+<td><span
+class="math inline">\(\displaystyle\sum\bigl(\frac{|x_i|^p}{A}\bigr)^t\bigl(\frac{|y_i|^q}{B}\bigr)^{1-t}\)</span></td>
+<td><span class="math inline">\(f(0)=f(1)=1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>这一方法的步骤是：</p>
+<ol type="1">
+<li><strong>构造函数</strong> <span class="math inline">\(f(t)=\sum k_i
+x_i^t\)</span>，使其具有幂序不等式的标准形式；</li>
+<li><strong>施加条件</strong> <span
+class="math inline">\(f(0)=f(s)\)</span>，确定 <span
+class="math inline">\(k_i\)</span> 与 <span
+class="math inline">\(x_i\)</span> 的关系；</li>
+<li><strong>利用凸性</strong>，由 <span
+class="math inline">\(f(0)=f(s)\)</span> 推导 <span
+class="math inline">\(f(r)\)</span> 与端点值的大小关系——<span
+class="math inline">\(0&lt;r&lt;s\)</span> 时 <span
+class="math inline">\(f(r)\le f(0)\)</span>，<span
+class="math inline">\(r&lt;0\)</span> 时 <span
+class="math inline">\(f(r)\ge f(0)\)</span>；</li>
+<li><strong>联系原不等式</strong>，将 <span
+class="math inline">\(f(r)\)</span> 翻译为 <span
+class="math inline">\(M_r\)</span> 与 <span
+class="math inline">\(M_s\)</span> 的关系，即得所欲证的不等式。</li>
+</ol>
+<p>这套框架不仅给出了简洁的证明，更揭示了幂平均、赫尔德等不等式之间内在的统一性。</p>
 
       </div>
     </div>

@@ -12,10 +12,10 @@ href="https://hexo.dytchem.cn/2025/03/22/Diffraction-Calculation/">其他渠道�
 <li>创新点</li>
 </ul>
 <p>本项目实现了更一般情况下的快速离散傅里叶变换（DFT），</p>
-<p><span class="math display">$$
+<p><span class="math display">\[
 Y_q=\sum_{p=0}^{n-1}{X_p\mathrm{e}^{-\mathrm{i}2\pi kpq}}\,\,\left( k\in
 \mathbb{R} \right)
-$$</span></p>
+\]</span></p>
 <p><a href="#dft-section">跳转到DFT计算</a></p>
 <p>进而实现了更方便易用的连续傅里叶变换（FT）积分数值计算算法。</p>
 <p>该算法不用限制原函数与像函数的网格尺寸，实现了针对任意区域任意精度的目标像函数计算。</p>
@@ -26,35 +26,35 @@ href="myFFT2.m">myFFT2.m</a>）</p>
 <ul>
 <li>基尔霍夫衍射初步近似（简单离散积分）</li>
 </ul>
-<p><span class="math display">$$
+<p><span class="math display">\[
 U\left( x,y \right) =\frac{1}{\mathrm{j}\lambda
 z}\iint_{-\infty}^{+\infty}{U_0\left( x_0,y_0 \right)
 \mathrm{e}^{\mathrm{j}k\sqrt{z^2+\left( x-x_0 \right) ^2+\left( y-y_0
 \right) ^2}}\mathrm{d}x_0\mathrm{d}y_0}
-$$</span></p>
+\]</span></p>
 <ul>
 <li>菲涅尔衍射（简单离散积分 or 快速傅里叶变换快速卷积）</li>
 </ul>
-<p><span class="math display">$$
+<p><span class="math display">\[
 U\left( x,y \right) =\frac{\mathrm{e}^{\mathrm{j}kz}}{\mathrm{j}\lambda
 z}\iint_{-\infty}^{+\infty}{U_0\left( x_0,y_0 \right)
 \mathrm{e}^{\mathrm{j}k\frac{\left( x-x_0 \right) ^2+\left( y-y_0
 \right) ^2}{2z}}\mathrm{d}x_0\mathrm{d}y_0}
-$$</span></p>
+\]</span></p>
 <ul>
 <li>夫琅禾费衍射（简单离散积分 or 快速傅里叶变换快速卷积）</li>
 </ul>
-<p><span class="math display">$$
+<p><span class="math display">\[
 U\left( x,y \right) =\frac{\mathrm{e}^{\mathrm{j}kz}}{\mathrm{j}\lambda
 z}e^{\mathrm{j}\frac{k}{2z}\left( x^2+y^2
 \right)}\iint_{-\infty}^{+\infty}{U_0\left( x_0,y_0 \right)
 \mathrm{e}^{-\mathrm{j}\frac{k}{z}\left( x_0x+y_0y
 \right)}\mathrm{d}x_0\mathrm{d}y_0}
-$$</span></p>
+\]</span></p>
 <ul>
 <li>角谱传播公式（快速傅里叶变换快速卷积）</li>
 </ul>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \left\{ \begin{aligned}
 A_0\left( \xi ,\eta \right) &amp;=\iint_{-\infty}^{+\infty}{U_0\left(
 x_0,y_0 \right) \mathrm{e}^{-\mathrm{j}2\pi \left( \xi x_0+\eta y_0
@@ -66,18 +66,17 @@ U\left( x,y \right) &amp;=\iint_{-\infty}^{+\infty}{A\left( \xi ,\eta
 \right) \mathrm{e}^{\mathrm{j}2\pi \left( \xi x+\eta y
 \right)}\mathrm{d}\xi \mathrm{d}\eta}\\
 \end{aligned} \right.
-$$</span></p>
+\]</span></p>
 <hr />
 <h2 id="两种积分运算方式">两种积分运算方式</h2>
 <ul>
 <li>简单离散积分</li>
 </ul>
-<p>时间复杂度<span
-class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></p>
+<p>时间复杂度<span class="math inline">\(O(N^2)\)</span></p>
 <ul>
 <li>快速傅里叶变换快速卷积</li>
 </ul>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \begin{cases}
 F\left( x \right)\\
 =\int_{-\infty}^{+\infty}{f\left( x_0 \right)
@@ -94,10 +93,10 @@ F\left( x \right)\\
 BiI}} \right\} \mathrm{e}^{-\mathrm{j}2\pi \left( DI+E \right)}\\
 =...\\
 \end{cases}
-$$</span></p>
+\]</span></p>
 <p><span id="dft-section"></span>
 最后，一般情况下的离散傅里叶变换（DFT）计算如下：</p>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \begin{cases}
 Y_q=\sum_{p=0}^{n-1}{X_p\mathrm{e}^{-\mathrm{i}2\pi kpq}}\,\,\left( k\in
 \mathbb{R} \right)\\
@@ -116,9 +115,9 @@ X_p\mathrm{e}^{-\mathrm{i}\pi kp^2} \right\} \mathscr{F} \left\{
 \mathrm{e}^{\mathrm{i}\pi kp^2} \right\} \right\}
 \mathrm{e}^{-\mathrm{i}\pi kq^2}\\
 \end{cases}
-$$</span></p>
+\]</span></p>
 <p>时间复杂度<span
-class="math inline"><em>N</em><em>l</em><em>o</em><em>g</em>(<em>N</em>)</span>，显著优于简单离散积分</p>
+class="math inline">\(Nlog(N)\)</span>，显著优于简单离散积分</p>
 <p>代码请见 <a href="myFFT1.m">myFFT1.m</a> 和 <a
 href="myFFT2.m">myFFT2.m</a></p>
 <hr />
